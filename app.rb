@@ -33,13 +33,15 @@ class App < Sinatra::Base
 
   get '/set_session' do
     #set session id here
-
     session[:id] = 1
-    @session = session
-    if session[:id] == 1
-      # "Session ID set. It's currently set to #{session[:id]}."
-      redirect '/fetch_session_id'
-  end
+     @session = session
+      if session[:id] == 1
+          # "Session ID set. It's currently set to #{session[:id]}."
+          redirect '/fetch_session_id'
+       else
+         "Session ID has not been set!"
+       end
+     end
 
   get '/fetch_session_id' do
     "You did it! session[:id] value: #{session[:id]}.\nNow, clear the session in the '/logout' route.\nSee the readme for further instructions.\nThen, navigate to the '/logout' path."
