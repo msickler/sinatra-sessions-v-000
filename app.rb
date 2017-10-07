@@ -21,8 +21,8 @@ class App < Sinatra::Base
   get '/set' do
     # set the :foo key of the session hash equal to 'hello' here!
     session[:foo] = 'hello'
-  end 
-  
+  end
+
   get '/fetch' do
     "You did it! session[:foo] value: #{session[:foo]}.\nMove on to Part II of this lab at '/second_exercise' "
   end
